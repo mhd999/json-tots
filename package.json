@@ -8,6 +8,7 @@
     "test": "npm run eslint && jest --verbose",
     "prebuild": "rimraf lib",
     "build": "babel --copy-files --out-dir lib --ignore *.spec.js src",
+    "buildp": "node node_modules/webpack/bin/webpack",
     "eslint": "./node_modules/.bin/eslint src --quiet",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
@@ -15,13 +16,14 @@
   "dependencies": {
     "babel-runtime": "^6.26.0",
     "functional-pipelines": "^1.1.0",
-    "jsonpath": "git+https://git@github.com:ooxi/jsonpath.git",
+    "jsonpath": "git+ssh://git@github.com/ooxi/jsonpath.git",
     "lodash": "^4.17.11",
     "md5": "^2.2.1",
     "traverse": "^0.6.6",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^6.0.1",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.1",
     "babel-plugin-transform-object-rest-spread": "~6.23.0",
@@ -34,7 +36,8 @@
     "rimraf": "^2.6.1",
     "semantic-release": "^15.14.0",
     "travis-deploy-once": "^5.0.11",
-    "@semantic-release/commit-analyzer": "^6.0.1"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   },
   "config": {
     "commitizen": {
